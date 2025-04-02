@@ -21,23 +21,38 @@ Menu Options:
 
 read -p 'Please choose a number from 1 to 6 to select the desired menu option: ' user_menu_option
 
-if [ $user_menu_option -eq 1 ]; then
+
+if [ "$user_menu_option" -eq 1 ]; then
     echo "
-    1) $menu_1
+1) $menu_1
     "
     ip a
-elif [ $user_menu_option -eq 2 ]; then
+elif [ "$user_menu_option" -eq 2 ]; then
     echo "
-    1) $menu_2
+2) $menu_2
     "
     read -p 'Please provide the IP address or domain name you want to ping: ' user_ip_address
+    echo
     ping -c 5 $user_ip_address
-elif [ $user_menu_option -eq 3 ]; then
+elif [ "$user_menu_option" -eq 3 ]; then
     echo "
-    1) $menu_3
+3) $menu_3
     "
     read -p 'Please provide the IP address range you want to scan: ' user_nmap_ip_address
-    nmap  -sn $user_nmap_ip_address
+    echo
+    nmap $user_nmap_ip_address
+elif [ "$user_menu_option" -eq 4 ]; then
+    echo "
+4) $menu_4
+    "
+    netstat -r
+    elif [ "$user_menu_option" -eq 5 ]; then
+    echo "
+5) $menu_5
+    "
+    read -p 'Please provide the IP address or domain name you want to trace the route to: ' user_traceroute_ip_address
+    echo
+    traceroute $user_traceroute_ip_address
 else
     echo "
     6) $menu_6
