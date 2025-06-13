@@ -46,6 +46,17 @@ This feature uses **symmetric encryption**, so the same password is used for bot
 
 ---
 
+## 📁 Encrypted Test File
+
+Inside the folder `encrypted-message-group`, you will find:
+- A text file that was encrypted using the script
+- A corresponding key used during the encryption process
+
+You can use this file to test the **"4 - Decrypt File"** option in the script.  
+Make sure the key is in the same directory as the script.
+
+---
+
 ## 💻 OS Compatibility
 
 - ✅ Options 1–8: Compatible with **Windows** and **Linux**.
